@@ -16,14 +16,11 @@
 <body>
     <div class="hat">
         <select name="tops_setting" id="tops_setting">
-            <option value="top_1" selected>Вершина 1</option>
-            <option value="top_2">Вершина 2</option>
-            <option value="top_3">Вершина 3</option>
-            <option value="top_4">Вершина 4</option>
-            <option value="top_5">Вершина 5</option>
-            <!--{% for el in station %}
-                <button id='st-from-{{ el.id }}' py-click="station_begining_{{el.id}}()">{{el.title }}</button>
-                {% endfor %}-->
+            {% for el in cont %}
+                {% for elem in el.count|get_range %}
+                    <option value="top_{{ elem }}" >Вершина {{ elem }}</option>
+                {% endfor %}
+            {% endfor %}
         </select>
         <p class="title">Настройка параметров вершин</p>
         <a class="teleport" href="visual"><button class="draw">Визуализировать</button></a>
