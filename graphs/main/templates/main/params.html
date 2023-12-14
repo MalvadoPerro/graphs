@@ -18,7 +18,7 @@
         <select name="tops_setting" id="tops_setting">
             {% for el in cont %}
                 {% for elem in el.count|get_range %}
-                    <option value="top_{{ elem }}" >Вершина {{ elem }}</option>
+                    <option value="{{ elem }}">Вершина {{ elem }}</option>
                 {% endfor %}
             {% endfor %}
         </select>
@@ -26,29 +26,47 @@
         <a class="teleport" href="visual"><button class="draw">Визуализировать</button></a>
     </div>
 
-    <div class="name">
-        <p class="title">Название вершины:</p>
-        <input type="text" placeholder="Хаааай" class="name_change">
-        <button class="change">Изменить</button>
-    </div>
+    <form method="post">
+        {% csrf_token %}
 
-    <div class="dangerous">
-        <p class="title">Опасное состояние:</p>
-        <div class="radio">
-            <input id="yes" type="radio" name="dangerous" value="True">
-            <label for="yes">Да</label>
+        <div class="name">
+            <p class="title">Название вершины:</p>
+            {{ form_name.name }}
+            <button class="change" type="submit">Изменить</button>
+            {{ form_name.num }}
+
         </div>
-        <div class="radio">
-            <input id="no" type="radio" name="dangerous" value="False">
-            <label for="no">Нет</label>
+
+        <div class="dangerous">
+            <p class="title">Опасное состояние:</p>
+            {{ form_name.dangerous }}
         </div>
-    </div>
+    </form>
 
     <table>
         <tr>
             <td><p class="title">Входящие рёбра:</p></td>
             <td><p class="title">Выходящие рёбра:</p></td>
         </tr>
+
+        <tr>
+            <td>
+                <div class="in_div">
+                    <select name="incoming" class="incoming">
+                        {% for el in cont %}
+                            {% for elem in el.count|get_range %}
+                                <option value="{{ elem }}">Вершина {{ elem }}</option>
+                            {% endfor %}
+                        {% endfor %}
+                    </select>
+                    <input type="number" placeholder="Вес" class="weight">
+                </div>
+            </td>
+            <td>
+
+            </td>
+        </tr>
+
         <tr>
             <td>
                 <button id="incoming_edge">Добавить</button>

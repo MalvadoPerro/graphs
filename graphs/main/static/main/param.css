@@ -122,22 +122,30 @@
     height: auto;
 }
 
-.dangerous .title {
-    margin: 0;
-    font-weight: 500;
-    font-size: 25px;
-    margin-right: 20px;
+.dangerous #id_dangerous {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
 }
 
-.dangerous .radio {
+.dangerous #id_dangerous label {
     margin-right: 50px;
     font-size: 20px;
     font-weight: 500;
 }
 
-.dangerous .radio input {
+.dangerous #id_dangerous input {
     height: 17px;
     width: 17px;
+}
+
+.dangerous .title {
+    margin: 0;
+    font-weight: 500;
+    font-size: 25px;
+    margin-right: 20px;
 }
 
 table {
@@ -172,4 +180,53 @@ table tr td #incoming_edge:hover, table tr td #outgoing_edge:hover {
     background-color: rgba(0, 0, 0, .2);
     box-shadow: 3px 3px 1px 1px rgba(0, 0, 0, .4);
     transition: .5s;
+}
+
+table tr td .in_div {
+    display: flex;
+    flex-direction: row;
+}
+
+table tr td .in_div .incoming {
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #000;
+    font-weight: 500;
+    font-size: 17px;
+    width: auto;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 1px 6px;
+}
+
+table tr td .in_div .incoming:hover {
+    cursor: pointer;
+}
+
+table tr td .in_div .incoming option {
+    background-color: #fff;
+}
+
+table tr td .in_div .incoming option:checked {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #000;
+}
+
+table tr td .in_div .incoming option:hover {
+    background-color: #fff;
+    color: #ff0000;
+}
+
+table tr td .in_div .weight {
+    height: auto;
+    width: 50%;
+    font-size: 17px;
+    background-color: #ffffff;
+}
+
+table tr td .in_div .weight:hover, table tr td .in_div .weight:focus {
+    border: 2px solid #000;
+    background-color: rgba(0, 0, 0, .2);
+    font-size: 17px;
 }
