@@ -48,6 +48,6 @@ class NamesForm(ModelForm):
                 attrs={
                 'type': 'radio',
                 'name': 'dangerous'
-            },
-                choices={'True': 'Да', 'False': 'Нет'}, )
+                },
+                choices={'True': 'Да', 'False': 'Нет'})
         }
