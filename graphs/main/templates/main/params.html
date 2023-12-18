@@ -18,7 +18,7 @@
             <option disabled selected hidden>Укажите вершину</option>
             {% for el in count %}
 
-                <option value="{{ el.num }}"><a href="{% url 'param' el.id %}">{{ el.name }}</a></option>
+                <option value="{{ el.num }}"><a href="{% url 'param' el.num %}">{{ el.name }}</a></option>
             {% endfor %}
         </select>
         <p class="title">Настройка параметров вершин</p>

@@ -7,6 +7,11 @@ def connect():
         cursor = sqlite_connection.cursor()
         print("База успешно подключена\n")
 
+        cursor.execute('''	
+            DELETE FROM main_names;
+        ''')
+        sqlite_connection.commit()
+
         cursor.execute('''
             SELECT * FROM main_count; 
         ''')
@@ -25,6 +30,11 @@ def connect():
         ''')
         rec = cursor.fetchall()
         print(rec)
+
+        cursor.execute('''
+            DELETE FROM main_count;
+        ''')
+        sqlite_connection.commit()
         cursor.close()
 
     except sqlite3.Error as error:
