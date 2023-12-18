@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.template.defaulttags import register
-from django.views. generic import DetailView
+from django.views. generic import DetailView, ListView
 from .models import Count, Names
 from .forms import CountForm, NamesForm
 from .connect_db import connect

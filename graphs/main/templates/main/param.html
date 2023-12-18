@@ -15,11 +15,9 @@
 <body>
     <div class="hat">
         <select name="tops_setting" id="tops_setting">
-            <!--
-            {% for el in count %}
-                <option value="{{ el.num }}">{{ el.name }}</option>
-            {% endfor %}
-            -->
+            <!--{% for el in count %}
+                <option value="{{ el.num }}" {% if el.num == pk %}selected{% endif %}>{{ el.name }}</option>
+            {% endfor %}-->
             <option value="{{ name.num }}">{{ name.name }}</option>
         </select>
         <p class="title">Настройка параметров вершин</p>

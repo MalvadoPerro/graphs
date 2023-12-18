@@ -36,6 +36,7 @@
 
 .hat #tops_setting option {
     background-color: #fff;
+    text-align: center;
 }
 
 .hat #tops_setting option:checked {

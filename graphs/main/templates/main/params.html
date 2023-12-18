@@ -14,11 +14,10 @@
 </head>
 <body>
     <div class="hat">
-        <select name="tops_setting" id="tops_setting">
+        <select name="tops_setting" id="tops_setting" onchange="if (this.value) window.location.href = this.value">
             <option disabled selected hidden>Укажите вершину</option>
             {% for el in count %}
-
-                <option value="{{ el.num }}"><a href="{% url 'param' el.num %}">{{ el.name }}</a></option>
+                <option value="{% url 'param' el.num %}">{{ el.name }}</option>
             {% endfor %}
         </select>
         <p class="title">Настройка параметров вершин</p>
